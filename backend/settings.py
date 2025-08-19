@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-u69!xjfl8$mwb5^7cj5#5r28e2dz^ywoa48zsz0k=cvm!fz!zy
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['myapp.onrender.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -102,7 +102,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # }
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.environ.get('DATABASE_URL', 'postgresql://user:pass@localhost:5432/aviator_db')
+        default=os.environ.get('DATABASE_URL', 'postgresql://user:user@localhost:5432/aviator_db')
     )
 }
 
