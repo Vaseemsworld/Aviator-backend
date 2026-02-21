@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'core',
-
+    'channels',
 ]
 
 MIDDLEWARE = [
@@ -162,3 +162,15 @@ CORS_ALLOWED_ORIGINS = [
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:5173",
 ]
+
+
+ASGI_APPLICATION = "backend.asgi.application"
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels.layers.InMemoryChannelLayer",
+        # "CONFIG": {
+        #     "hosts": [("127.0.0.1", 6379)],  # Redis server
+        # },
+    },
+}
